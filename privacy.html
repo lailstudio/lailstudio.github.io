@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Lail Studio 개인정보처리방침" />
+  <title>개인정보처리방침 | Lail Studio</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --muted: #666666;
+      --subtle: #8a8a8a;
+      --border: #e9e9ee;
+      --accent: #6d4aff;
+      --accent-soft: #f5f2ff;
+      --max: 920px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+        "Pretendard", "Noto Sans KR", "Segoe UI", sans-serif;
+      line-height: 1.75;
+      word-break: keep-all;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .wrap {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 0 auto;
+      padding: 56px 0 72px;
+    }
+
+    .brand {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(30px, 5vw, 44px);
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .meta {
+      margin-bottom: 36px;
+      padding: 16px 18px;
+      border-radius: 14px;
+      background: var(--accent-soft);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .toc {
+      margin: 0 0 38px;
+      padding: 20px 22px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .toc strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .toc ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    section {
+      padding: 30px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    section:first-of-type { border-top: 0; }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 21px;
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      font-size: 16px;
+    }
+
+    p { margin: 0 0 12px; }
+
+    ul, ol {
+      margin: 8px 0 14px;
+      padding-left: 22px;
+    }
+
+    li { margin: 6px 0; }
+
+    .note {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-left: 3px solid var(--accent);
+      background: #faf9ff;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .service-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .service-item {
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .contact {
+      margin-top: 14px;
+      padding: 18px 20px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    footer {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--subtle);
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      .wrap {
+        width: min(calc(100% - 28px), var(--max));
+        padding: 36px 0 52px;
+      }
+
+      h1 { font-size: 32px; }
+      .lead { font-size: 15px; }
+      section { padding: 24px 0; }
+      h2 { font-size: 19px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="brand">Lail Studio</div>
+    <h1>개인정보처리방침</h1>
+
+    <p class="lead">
+      Lail Studio는 이용자의 개인정보를 중요하게 생각하며, 관련 법령과 각 서비스의 실제 기능에 따라 필요한 범위에서만 개인정보를 처리합니다.
+    </p>
+
+    <div class="meta">
+      시행일: 2026년 9월 5일<br />
+      본 방침은 Lail Studio가 제공하는 앱, 웹사이트 및 기타 디지털 서비스에 공통으로 적용됩니다.
+      개별 서비스의 기능이나 권한 사용 방식이 다른 경우에는 해당 서비스 내 별도 안내 또는 추가 고지가 함께 적용될 수 있습니다.
+    </div>
+
+    <nav class="toc" aria-label="목차">
+      <strong>목차</strong>
+      <ul>
+        <li><a href="#scope">1. 적용 범위</a></li>
+        <li><a href="#principles">2. 개인정보 처리 원칙</a></li>
+        <li><a href="#collection">3. 처리할 수 있는 정보</a></li>
+        <li><a href="#permissions">4. 앱 권한 사용</a></li>
+        <li><a href="#purpose">5. 이용 목적</a></li>
+        <li><a href="#cookies">6. 쿠키 및 자동 수집 기술</a></li>
+        <li><a href="#ads">7. 광고 서비스</a></li>
+        <li><a href="#analytics">8. 분석 및 오류 진단 서비스</a></li>
+        <li><a href="#third-party">9. 제3자 제공 및 외부 서비스</a></li>
+        <li><a href="#retention">10. 보유 및 파기</a></li>
+        <li><a href="#rights">11. 이용자의 권리</a></li>
+        <li><a href="#children">12. 아동의 개인정보</a></li>
+        <li><a href="#security">13. 안전성 확보조치</a></li>
+        <li><a href="#international">14. 국외 처리 가능성</a></li>
+        <li><a href="#changes">15. 방침 변경</a></li>
+        <li><a href="#contact">16. 문의처</a></li>
+      </ul>
+    </nav>
+
+    <section id="scope">
+      <h2>1. 적용 범위</h2>
+      <p>
+        본 개인정보처리방침은 Lail Studio가 운영하거나 제공하는 앱, 웹사이트 및 관련 디지털 서비스에 공통으로 적용됩니다.
+      </p>
+      <p>
+        서비스마다 기능과 이용 방식이 다르므로 실제로 처리되는 정보의 종류, 앱 권한, 광고 또는 분석 도구의 사용 여부는 서비스별로 다를 수 있습니다.
+        개별 서비스에서 별도의 개인정보 안내가 제공되는 경우 해당 안내가 함께 적용됩니다.
+      </p>
+    </section>
+
+    <section id="principles">
+      <h2>2. 개인정보 처리 원칙</h2>
+      <ul>
+        <li>서비스 제공에 필요한 범위에서만 정보를 처리합니다.</li>
+        <li>사용하지 않는 정보나 권한을 불필요하게 수집하지 않습니다.</li>
+        <li>서비스별 실제 기능과 관계없는 개인정보를 공통적으로 수집하지 않습니다.</li>
+        <li>개인정보를 판매하는 것을 목적으로 하지 않습니다.</li>
+        <li>관계 법령과 플랫폼 정책에 따라 필요한 안내와 동의 절차를 제공합니다.</li>
+      </ul>
+    </section>
+
+    <section id="collection">
+      <h2>3. 처리할 수 있는 정보</h2>
+      <p>
+        Lail Studio의 서비스는 기능에 따라 아래 정보의 전부 또는 일부를 처리할 수 있습니다.
+        모든 서비스가 아래 정보를 모두 수집하는 것은 아닙니다.
+      </p>
+
+      <h3>3-1. 자동으로 생성되거나 수집될 수 있는 정보</h3>
+      <ul>
+        <li>기기 종류, 운영체제, 앱 버전, 브라우저 정보</li>
+        <li>IP 주소, 접속 시간, 방문 또는 사용 기록</li>
+        <li>오류 로그, 성능 정보, 비정상 종료 정보</li>
+        <li>쿠키 및 유사 기술을 통해 생성되는 정보</li>
+        <li>광고 기능 사용 시 광고 식별자 및 광고 관련 기기 정보</li>
+      </ul>
+
+      <h3>3-2. 이용자가 직접 제공할 수 있는 정보</h3>
+      <ul>
+        <li>문의 과정에서 제공하는 이메일 주소</li>
+        <li>문의 또는 지원 요청 내용</li>
+        <li>서비스 기능상 이용자가 직접 입력하거나 선택한 정보</li>
+      </ul>
+
+      <p>
+        일부 서비스는 회원가입 기능이 없으며, 이름, 주소, 전화번호 등 직접 식별 정보를 요구하지 않을 수 있습니다.
+      </p>
+    </section>
+
+    <section id="permissions">
+      <h2>4. 앱 권한 사용</h2>
+      <p>
+        일부 앱은 특정 기능을 제공하기 위해 운영체제 권한을 요청할 수 있습니다.
+        요청되는 권한은 앱마다 다르며, 해당 기능에 필요한 경우에만 사용됩니다.
+      </p>
+      <p>
+        예를 들어 알림, 전화 관련 기능, 저장공간, 마이크 등 시스템 권한이 필요한 서비스가 있을 수 있습니다.
+        실제 사용 권한과 목적은 해당 앱의 권한 요청 화면 또는 별도 안내에서 확인할 수 있습니다.
+      </p>
+      <div class="note">
+        권한 허용 여부는 이용자가 기기 설정에서 변경할 수 있으며, 특정 권한을 허용하지 않을 경우 관련 기능의 사용이 제한될 수 있습니다.
+      </div>
+    </section>
+
+    <section id="purpose">
+      <h2>5. 개인정보의 이용 목적</h2>
+      <ul>
+        <li>서비스 및 핵심 기능 제공</li>
+        <li>사용자 설정 및 서비스 상태 유지</li>
+        <li>오류 분석, 성능 개선 및 서비스 품질 향상</li>
+        <li>보안, 악용 방지 및 비정상 이용 탐지</li>
+        <li>이용자 문의 및 고객 지원</li>
+        <li>광고 제공 및 광고 성과 측정</li>
+        <li>서비스 이용 통계 및 운영 개선</li>
+      </ul>
+    </section>
+
+    <section id="cookies">
+      <h2>6. 쿠키 및 자동 수집 기술</h2>
+      <p>
+        Lail Studio의 웹 서비스는 서비스 운영, 이용 통계, 광고 제공 등을 위해 쿠키 및 유사 기술을 사용할 수 있습니다.
+      </p>
+      <p>
+        이용자는 브라우저 설정을 통해 쿠키를 삭제하거나 저장을 제한할 수 있습니다.
+        다만 쿠키를 제한하면 일부 웹 기능 또는 광고 관련 기능이 정상적으로 작동하지 않을 수 있습니다.
+      </p>
+    </section>
+
+    <section id="ads">
+      <h2>7. 광고 서비스</h2>
+      <p>
+        Lail Studio의 일부 서비스는 서비스 운영을 위해 제3자 광고 서비스를 사용할 수 있습니다.
+        대표적으로 웹 서비스에서는 Google AdSense, 모바일 앱에서는 Google AdMob을 사용할 수 있습니다.
+      </p>
+
+      <h3>7-1. Google AdSense</h3>
+      <p>
+        일부 웹사이트는 Google AdSense를 통해 광고를 제공할 수 있습니다.
+        Google 및 광고 파트너는 광고 제공, 빈도 조절, 부정 광고 방지, 성과 측정 등을 위해 쿠키 또는 유사 기술을 사용할 수 있습니다.
+      </p>
+
+      <h3>7-2. Google AdMob</h3>
+      <p>
+        일부 모바일 앱은 Google AdMob을 통해 광고를 제공할 수 있습니다.
+        이 과정에서 광고 식별자, 기기 정보, 앱 이용 정보 등이 Google 또는 광고 파트너에 의해 처리될 수 있습니다.
+      </p>
+
+      <h3>7-3. 맞춤형 및 비맞춤형 광고</h3>
+      <p>
+        이용자의 지역, 연령, 플랫폼 정책 및 동의 여부에 따라 맞춤형 광고 또는 비맞춤형 광고가 제공될 수 있습니다.
+        필요한 지역에서는 광고 관련 동의 또는 선택 화면이 제공될 수 있습니다.
+      </p>
+
+      <p>
+        Google의 개인정보 처리 방식은
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google 개인정보처리방침</a>
+        에서 확인할 수 있습니다.
+      </p>
+
+      <div class="note">
+        광고 기능이 적용되지 않은 서비스에서는 광고 관련 정보가 처리되지 않을 수 있습니다.
+      </div>
+    </section>
+
+    <section id="analytics">
+      <h2>8. 분석 및 오류 진단 서비스</h2>
+      <p>
+        일부 서비스는 안정성 개선, 오류 분석 또는 이용 통계 확인을 위해 외부 분석 또는 오류 진단 도구를 사용할 수 있습니다.
+        예를 들어 Google Analytics for Firebase, Firebase Crashlytics 등과 같은 서비스를 사용할 수 있습니다.
+      </p>
+      <p>
+        이러한 도구를 실제로 사용하는 경우 관련 서비스 제공업체가 기기 정보, 앱 사용 정보, 오류 정보 등을 처리할 수 있습니다.
+        사용하지 않는 서비스에는 해당 처리가 적용되지 않습니다.
+      </p>
+    </section>
+
+    <section id="third-party">
+      <h2>9. 제3자 제공 및 외부 서비스</h2>
+      <p>
+        Lail Studio는 법령에 근거가 있거나 이용자의 동의가 있는 경우를 제외하고 개인정보를 임의로 판매하거나 제3자에게 제공하지 않습니다.
+      </p>
+      <p>
+        다만 서비스 운영을 위해 광고, 분석, 오류 진단, 호스팅, 앱 배포 등 외부 서비스 제공업체를 이용할 수 있습니다.
+        이 경우 해당 업체의 개인정보처리방침과 관련 법령이 함께 적용될 수 있습니다.
+      </p>
+
+      <div class="service-list">
+        <div class="service-item">Google Play 및 Google Play 서비스</div>
+        <div class="service-item">Google AdMob</div>
+        <div class="service-item">Google AdSense</div>
+        <div class="service-item">Firebase 또는 Google Analytics 계열 서비스(사용하는 서비스에 한함)</div>
+        <div class="service-item">GitHub Pages 등 웹 호스팅 서비스(해당 웹사이트에 한함)</div>
+      </div>
+    </section>
+
+    <section id="retention">
+      <h2>10. 개인정보의 보유 및 파기</h2>
+      <p>
+        개인정보는 처리 목적이 달성되면 지체 없이 파기하는 것을 원칙으로 합니다.
+        다만 관계 법령 또는 서비스 운영상 정당한 사유로 일정 기간 보관이 필요한 경우에는 해당 기간 동안 보관할 수 있습니다.
+      </p>
+      <p>
+        외부 광고, 분석 또는 오류 진단 서비스가 처리하는 정보의 보관 기간은 해당 서비스 제공업체의 정책에 따라 달라질 수 있습니다.
+      </p>
+    </section>
+
+    <section id="rights">
+      <h2>11. 이용자의 권리</h2>
+      <p>
+        이용자는 관련 법령이 정하는 범위에서 개인정보의 열람, 정정, 삭제, 처리정지 등을 요청할 수 있습니다.
+        관련 문의는 아래 연락처를 통해 접수할 수 있습니다.
+      </p>
+      <p>
+        쿠키, 광고 맞춤설정, 앱 권한 등은 이용자의 브라우저, 기기 또는 Google 계정 설정에서 직접 변경할 수 있는 경우가 있습니다.
+      </p>
+    </section>
+
+    <section id="children">
+      <h2>12. 아동의 개인정보</h2>
+      <p>
+        Lail Studio는 서비스 특성상 필요하지 않은 아동의 개인정보를 의도적으로 수집하지 않으며,
+        아동을 대상으로 하는 서비스가 있는 경우 관련 법령 및 플랫폼 정책에 따른 보호조치를 적용합니다.
+      </p>
+    </section>
+
+    <section id="security">
+      <h2>13. 개인정보의 안전성 확보조치</h2>
+      <p>
+        Lail Studio는 개인정보의 분실, 유출, 변조 또는 훼손을 방지하기 위해 처리 정보의 성격과 서비스 규모에 맞는 기술적·관리적 보호조치를 적용하도록 노력합니다.
+      </p>
+    </section>
+
+    <section id="international">
+      <h2>14. 국외 처리 가능성</h2>
+      <p>
+        Google, Firebase, GitHub 등 글로벌 서비스 제공업체를 이용하는 과정에서 일부 정보가 대한민국 외 지역의 서버에서 처리되거나 저장될 수 있습니다.
+        구체적인 처리 위치와 방식은 해당 서비스 제공업체의 정책 및 인프라 운영 방식에 따라 달라질 수 있습니다.
+      </p>
+    </section>
+
+    <section id="changes">
+      <h2>15. 개인정보처리방침의 변경</h2>
+      <p>
+        서비스 기능, 외부 서비스 사용 여부 또는 관련 법령의 변경에 따라 본 방침이 수정될 수 있습니다.
+        중요한 변경사항이 있는 경우 Lail Studio 웹사이트 또는 해당 서비스 내에서 안내할 수 있습니다.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>16. 문의처</h2>
+      <div class="contact">
+        <strong>Lail Studio</strong><br />
+        이메일:
+        <a href="mailto:lailstudio.app@gmail.com">lailstudio.app@gmail.com</a><br />
+        웹사이트:
+        <a href="https://lailstudio.github.io" target="_blank" rel="noopener noreferrer">https://lailstudio.github.io</a>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 Lail Studio. All rights reserved.
+    </footer>
+  </main>
+</body>
+</html>
