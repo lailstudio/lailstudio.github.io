@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lailstudio.lailmoa.com/sitemap.xml
