@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="TimeCall 개인정보처리방침 - 예약 전화 앱"
+  >
+
+  <meta name="theme-color" content="#0a1628">
+
+  <title>개인정보처리방침 | TimeCall</title>
+
+  <style>
+    :root {
+      --background: #0a1628;
+      --surface: #0f2340;
+      --surface-light: #163050;
+      --border: rgba(56, 210, 160, 0.2);
+      --primary: #38d2a0;
+      --accent: #5be0b8;
+      --text: #f0f6f8;
+      --text-muted: #a0b8c8;
+      --max-width: 900px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Noto Sans KR",
+        Arial,
+        sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(
+          circle at 20% 0%,
+          rgba(56, 210, 160, 0.12),
+          transparent 32%
+        ),
+        linear-gradient(
+          150deg,
+          #060e1a,
+          var(--background)
+        );
+      line-height: 1.75;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(6, 14, 26, 0.85);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    .home-link {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    main {
+      padding: 72px 0 100px;
+    }
+
+    .hero {
+      margin-bottom: 38px;
+    }
+
+    .label {
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 850;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 10px 0 16px;
+      font-size: clamp(2.2rem, 6vw, 4.2rem);
+      line-height: 1.1;
+      letter-spacing: -0.05em;
+    }
+
+    .intro {
+      max-width: 760px;
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 1.02rem;
+      word-break: keep-all;
+    }
+
+    .meta-card {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .meta-item {
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(22, 48, 80, 0.65);
+    }
+
+    .meta-title {
+      color: var(--text-muted);
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+
+    .meta-value {
+      margin-top: 5px;
+      font-weight: 800;
+      word-break: break-all;
+    }
+
+    .policy-card {
+      padding: 38px;
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(15, 40, 68, 0.93),
+          rgba(8, 24, 46, 0.9)
+        );
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+    }
+
+    section + section {
+      margin-top: 42px;
+      padding-top: 38px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    h2 {
+      margin: 0 0 15px;
+      color: var(--text);
+      font-size: 1.45rem;
+      letter-spacing: -0.025em;
+    }
+
+    h3 {
+      margin: 24px 0 8px;
+      font-size: 1.05rem;
+    }
+
+    p {
+      color: var(--text-muted);
+      word-break: keep-all;
+    }
+
+    ul {
+      margin: 12px 0 0;
+      padding-left: 23px;
+      color: var(--text-muted);
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    .notice {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border: 1px solid rgba(56, 210, 160, 0.2);
+      border-radius: 14px;
+      color: #e0eef0;
+      background: rgba(56, 210, 160, 0.07);
+    }
+
+    .service-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .service {
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .service strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 7px;
+    }
+
+    .contact-box {
+      margin-top: 18px;
+      padding: 22px;
+      border: 1px solid rgba(56, 210, 160, 0.22);
+      border-radius: 16px;
+      background: rgba(56, 210, 160, 0.06);
+    }
+
+    footer {
+      padding: 30px 0 45px;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      color: #7f91a8;
+      font-size: 0.84rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 700px) {
+      main {
+        padding-top: 50px;
+      }
+
+      .meta-card {
+        grid-template-columns: 1fr;
+      }
+
+      .policy-card {
+        padding: 25px 20px;
+        border-radius: 20px;
+      }
+
+      .nav {
+        min-height: 64px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="https://lailstudio.github.io/">
+        <span>Lail Studio</span>
+      </a>
+
+      <a class="home-link" href="https://lailstudio.github.io/">
+        홈페이지로 돌아가기
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="hero">
+        <div class="label">Privacy Policy</div>
+
+        <h1>TimeCall 개인정보처리방침</h1>
+
+        <p class="intro">
+          Lail Studio는 이용자의 개인정보를 중요하게 생각합니다.
+          본 개인정보처리방침은 TimeCall 앱에서 처리되는 정보와
+          그 이용 목적을 설명합니다.
+        </p>
+
+        <div class="meta-card">
+          <div class="meta-item">
+            <div class="meta-title">앱 이름</div>
+            <div class="meta-value">TimeCall</div>
+          </div>
+
+          <div class="meta-item">
+            <div class="meta-title">개발자</div>
+            <div class="meta-value">Lail Studio</div>
+          </div>
+
+          <div class="meta-item">
+            <div class="meta-title">시행일</div>
+            <div class="meta-value">2026년 9월 9일</div>
+          </div>
+        </div>
+      </div>
+
+      <article class="policy-card">
+        <section>
+          <h2>1. 서비스 개요</h2>
+
+          <p>
+            TimeCall은 사용자가 전화번호와 예약 시간을 설정하면
+            지정한 시간에 해당 번호로 자동 발신하는 예약 전화 앱입니다.
+            회원가입이나 로그인을 요구하지 않으며,
+            이름, 이메일 주소, 주소, 연락처 등 개인을 직접 식별할 수 있는
+            정보를 자체적으로 수집하거나 외부 서버로 전송하지 않습니다.
+          </p>
+        </section>
+
+        <section>
+          <h2>2. 기기에 저장되는 정보</h2>
+
+          <p>
+            TimeCall의 기능 제공을 위해 다음 정보가
+            이용자의 기기 내부에 저장됩니다.
+          </p>
+
+          <ul>
+            <li>사용자가 입력한 예약 정보 (전화번호, 예약 시간 등)</li>
+            <li>최근 예약 실행 내역 (활동 기록)</li>
+            <li>알림 간격, 진동 등 앱 설정 정보</li>
+          </ul>
+
+          <p>
+            이 정보는 이용자의 기기 내부에서만 사용되며,
+            Lail Studio가 운영하는 별도의 서버로 전송되지 않습니다.
+            앱을 삭제하거나 앱 데이터를 초기화하면 함께 삭제됩니다.
+          </p>
+
+          <div class="notice">
+            사용자가 입력한 전화번호는 예약 발신 기능을 위해서만 사용되며,
+            기기 외부로 전송되거나 제3자에게 제공되지 않습니다.
+          </div>
+        </section>
+
+        <section>
+          <h2>3. 앱 권한</h2>
+
+          <p>
+            TimeCall은 핵심 기능 제공을 위해 다음 운영체제 권한을 사용합니다.
+          </p>
+
+          <h3>3-1. 전화 권한</h3>
+          <p>
+            사용자가 설정한 예약 시간에 지정된 전화번호로
+            자동 발신하기 위해 전화 관련 권한을 사용합니다.
+            이 권한은 예약된 전화 발신 기능에만 사용되며,
+            통화 내용을 녹음하거나 통화 기록을 수집하지 않습니다.
+          </p>
+
+          <h3>3-2. 알림 권한</h3>
+          <p>
+            예약 실행 안내, 예약 상태 변경 등을 사용자에게
+            알리기 위해 알림 권한을 사용합니다.
+          </p>
+
+          <div class="notice">
+            권한 허용 여부는 기기 설정에서 변경할 수 있으며,
+            전화 권한을 허용하지 않으면 예약 자동 발신 기능이
+            정상적으로 작동하지 않을 수 있습니다.
+          </div>
+        </section>
+
+        <section>
+          <h2>4. 제3자 서비스 및 자동 처리 정보</h2>
+
+          <p>
+            TimeCall은 광고 제공과 앱 품질 개선을 위해
+            제3자 서비스를 사용할 수 있습니다.
+            해당 서비스 제공자는 서비스 운영 과정에서 기기 정보,
+            광고 관련 정보, 앱 사용 정보 및 오류 정보 등을
+            자동으로 처리할 수 있습니다.
+          </p>
+
+          <div class="service-list">
+            <div class="service">
+              <strong>Google AdMob</strong>
+
+              앱 내 광고 제공, 광고 표시 및 성과 측정,
+              부정 이용 방지를 위해 사용될 수 있습니다.
+
+              <br><br>
+
+              Google 개인정보처리방침:
+              <a
+                href="https://policies.google.com/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://policies.google.com/privacy
+              </a>
+            </div>
+
+            <div class="service">
+              <strong>Google Analytics for Firebase</strong>
+
+              앱 실행, 화면 이용 및 기능 사용과 같은
+              비식별 또는 가명 처리된 앱 이용 통계를 분석하고
+              앱의 안정성과 사용성을 개선하기 위해 사용될 수 있습니다.
+
+              <br><br>
+
+              Firebase 개인정보 및 보안 정보:
+              <a
+                href="https://firebase.google.com/support/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://firebase.google.com/support/privacy
+              </a>
+            </div>
+
+            <div class="service">
+              <strong>Firebase Crashlytics</strong>
+
+              앱 비정상 종료 및 오류 정보를 수집하여
+              앱의 안정성을 개선하기 위해 사용될 수 있습니다.
+              수집되는 정보에는 기기 종류, 운영체제 버전,
+              오류 발생 시점의 앱 상태 등이 포함될 수 있습니다.
+            </div>
+          </div>
+
+          <div class="notice">
+            TimeCall은 사용자가 입력한 전화번호를 광고 SDK 또는
+            분석 서비스에 전달하지 않습니다. 다만 Google 서비스가
+            처리하는 구체적인 정보와 보관 기간은 Google의 정책과
+            설정에 따라 달라질 수 있습니다.
+          </div>
+        </section>
+
+        <section>
+          <h2>5. 개인정보의 이용 목적</h2>
+
+          <ul>
+            <li>예약 전화 발신 기능 제공</li>
+            <li>예약 실행 상태 알림</li>
+            <li>사용자 설정 및 예약 정보 유지</li>
+            <li>오류 분석, 성능 개선 및 서비스 품질 향상</li>
+            <li>광고 제공 및 광고 성과 측정</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>6. 개인정보의 보유 및 삭제</h2>
+
+          <p>
+            TimeCall이 직접 관리하는 예약 정보 및 활동 내역은
+            이용자의 기기에 저장됩니다.
+            이용자는 다음 방법으로 해당 정보를 삭제할 수 있습니다.
+          </p>
+
+          <ul>
+            <li>앱 내에서 개별 예약 삭제</li>
+            <li>기기의 앱 설정에서 저장공간 또는 앱 데이터 초기화</li>
+            <li>앱 삭제</li>
+          </ul>
+
+          <p>
+            제3자 서비스가 처리하는 정보의 보관 및 삭제 기준은
+            각 서비스 제공자의 개인정보처리방침을 따릅니다.
+          </p>
+        </section>
+
+        <section>
+          <h2>7. 국외 처리 가능성</h2>
+
+          <p>
+            Google AdMob 및 Firebase와 같은 글로벌 서비스가 사용되는 경우,
+            관련 정보가 대한민국 외 지역의 서버에서 처리되거나
+            저장될 수 있습니다. 이 경우 해당 서비스 제공자의
+            보안 및 개인정보 보호 정책이 적용됩니다.
+          </p>
+        </section>
+
+        <section>
+          <h2>8. 이용자의 권리</h2>
+
+          <p>
+            이용자는 관련 법령이 정하는 범위에서
+            개인정보의 열람, 정정, 삭제, 처리정지 등을 요청할 수 있습니다.
+            관련 문의는 아래 연락처를 통해 접수할 수 있습니다.
+          </p>
+
+          <p>
+            앱 권한 및 광고 맞춤설정은 기기 또는 Google 계정 설정에서
+            직접 변경할 수 있습니다.
+          </p>
+        </section>
+
+        <section>
+          <h2>9. 개인정보처리방침의 변경</h2>
+
+          <p>
+            앱 기능, 사용 서비스 또는 관련 법령과 정책이 변경되는 경우
+            본 개인정보처리방침이 수정될 수 있습니다.
+            중요한 변경 사항은 본 페이지의 시행일을 변경하거나
+            앱 또는 홈페이지를 통해 안내합니다.
+          </p>
+        </section>
+
+        <section>
+          <h2>10. 문의처</h2>
+
+          <p>
+            개인정보 보호 또는 앱 이용과 관련한 문의는
+            아래 이메일로 보내주시기 바랍니다.
+          </p>
+
+          <div class="contact-box">
+            <strong>Lail Studio</strong>
+            <br>
+
+            이메일:
+            <a href="mailto:lailstudio.app@gmail.com">
+              lailstudio.app@gmail.com
+            </a>
+          </div>
+        </section>
+
+        <section>
+          <h2>11. 시행일</h2>
+
+          <p>
+            본 개인정보처리방침은 2026년 9월 9일부터 적용됩니다.
+          </p>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>&copy; 2026 Lail Studio. All rights reserved.</span>
+
+      <a href="https://lailstudio.github.io/">Home</a>
+    </div>
+  </footer>
+</body>
+</html>
