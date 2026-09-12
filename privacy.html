@@ -1,193 +1,648 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Lail Studio 개인정보처리방침" />
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="description"
+    content="Lail Studio 개인정보처리방침"
+  >
+
+  <meta name="theme-color" content="#071426">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="개인정보처리방침 | Lail Studio">
+  <meta
+    property="og:description"
+    content="Lail Studio의 공통 개인정보처리방침입니다."
+  >
+  <meta
+    property="og:url"
+    content="https://lailstudio.lailmoa.com/privacy"
+  >
+  <meta property="og:site_name" content="Lail Studio">
+  <meta property="og:locale" content="ko_KR">
+
+  <link
+    rel="canonical"
+    href="https://lailstudio.lailmoa.com/privacy"
+  >
+
   <title>개인정보처리방침 | Lail Studio</title>
+
   <style>
     :root {
-      color-scheme: light;
-      --bg: #ffffff;
-      --text: #1a1a1a;
-      --muted: #666666;
-      --subtle: #8a8a8a;
-      --border: #e9e9ee;
-      --accent: #6d4aff;
-      --accent-soft: #f5f2ff;
-      --max: 920px;
+      color-scheme: dark;
+
+      --background: #071426;
+      --background-light: #0d2038;
+
+      --surface: rgba(15, 36, 63, 0.82);
+      --surface-light: rgba(23, 51, 86, 0.92);
+
+      --border: rgba(111, 210, 255, 0.18);
+
+      --primary: #45c8ff;
+      --primary-soft: rgba(69, 200, 255, 0.09);
+
+      --accent: #ffd94a;
+
+      --text: #f5f8ff;
+      --text-muted: #aab9cd;
+      --text-subtle: #7e90a7;
+
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+
+      --max-width: 920px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
-      background: var(--bg);
+      min-height: 100vh;
+      overflow-x: hidden;
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Apple SD Gothic Neo",
+        "Pretendard",
+        "Noto Sans KR",
+        Arial,
+        sans-serif;
+
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
-        "Pretendard", "Noto Sans KR", "Segoe UI", sans-serif;
+
+      background:
+        radial-gradient(
+          circle at 18% 10%,
+          rgba(58, 187, 255, 0.16),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 84% 18%,
+          rgba(255, 94, 190, 0.08),
+          transparent 30%
+        ),
+        linear-gradient(
+          150deg,
+          #050d1a 0%,
+          #071426 50%,
+          #0a1830 100%
+        );
+
       line-height: 1.75;
       word-break: keep-all;
     }
 
     a {
-      color: var(--accent);
+      color: var(--primary);
       text-decoration: none;
     }
 
-    a:hover { text-decoration: underline; }
+    a:hover {
+      text-decoration: underline;
+    }
 
-    .wrap {
-      width: min(calc(100% - 40px), var(--max));
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .page-glow {
+      position: fixed;
+      z-index: -1;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.12;
+      pointer-events: none;
+    }
+
+    .glow-left {
+      top: 180px;
+      left: -170px;
+      background: #00c8ff;
+    }
+
+    .glow-right {
+      top: 520px;
+      right: -180px;
+      background: #ff4bb2;
+    }
+
+    /* Header */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+      background: rgba(5, 13, 26, 0.82);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .header-inner {
+      width: min(calc(100% - 40px), 1120px);
+      min-height: 72px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+
       margin: 0 auto;
-      padding: 56px 0 72px;
     }
 
     .brand {
-      display: inline-block;
-      margin-bottom: 14px;
-      color: var(--accent);
-      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      color: var(--text);
+
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .brand:hover {
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+
+      width: 42px;
+      height: 42px;
+
+      overflow: hidden;
+
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 13px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(36, 97, 152, 0.9),
+          rgba(13, 36, 68, 0.95)
+        );
+
+      box-shadow:
+        0 8px 24px rgba(0, 192, 255, 0.15);
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .home-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+
+      min-height: 42px;
+      padding: 0 15px;
+
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.035);
+
+      font-size: 0.9rem;
       font-weight: 700;
+
+      transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .home-link:hover {
+      color: var(--text);
+      text-decoration: none;
+
+      border-color: rgba(69, 200, 255, 0.32);
+
+      background: rgba(69, 200, 255, 0.07);
+
+      transform: translateY(-1px);
+    }
+
+    /* Main */
+
+    .wrap {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin: 0 auto;
+      padding: 72px 0 82px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      margin-bottom: 18px;
+      padding: 8px 13px;
+
+      border: 1px solid rgba(69, 200, 255, 0.24);
+      border-radius: 999px;
+
+      color: #aeeaff;
+      background: rgba(43, 157, 219, 0.08);
+
+      font-size: 0.78rem;
+      font-weight: 750;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: var(--primary);
+
+      box-shadow:
+        0 0 13px var(--primary);
     }
 
     h1 {
-      margin: 0 0 12px;
-      font-size: clamp(30px, 5vw, 44px);
-      line-height: 1.2;
-      letter-spacing: -0.03em;
+      margin: 0 0 16px;
+
+      font-size: clamp(2.5rem, 6vw, 4.4rem);
+
+      line-height: 1.08;
+
+      letter-spacing: -0.055em;
     }
 
     .lead {
-      margin: 0 0 28px;
-      color: var(--muted);
-      font-size: 16px;
+      max-width: 760px;
+
+      margin: 0 0 34px;
+
+      color: var(--text-muted);
+
+      font-size: 1.04rem;
+      line-height: 1.8;
     }
 
     .meta {
-      margin-bottom: 36px;
-      padding: 16px 18px;
-      border-radius: 14px;
-      background: var(--accent-soft);
-      color: var(--muted);
-      font-size: 14px;
+      margin-bottom: 38px;
+      padding: 19px 21px;
+
+      border: 1px solid rgba(69, 200, 255, 0.17);
+      border-radius: 16px;
+
+      color: var(--text-muted);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(26, 85, 128, 0.18),
+          rgba(16, 43, 75, 0.5)
+        );
+
+      font-size: 0.9rem;
+    }
+
+    .meta strong {
+      color: #d9f5ff;
     }
 
     .toc {
-      margin: 0 0 38px;
-      padding: 20px 22px;
+      margin: 0 0 44px;
+      padding: 24px 25px;
+
       border: 1px solid var(--border);
-      border-radius: 14px;
+      border-radius: 18px;
+
+      background: rgba(255, 255, 255, 0.025);
     }
 
     .toc strong {
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
+
+      color: var(--text);
+
+      font-size: 1rem;
     }
 
     .toc ul {
+      columns: 2;
+      column-gap: 38px;
+
       margin: 0;
       padding-left: 20px;
     }
 
-    section {
-      padding: 30px 0;
-      border-top: 1px solid var(--border);
+    .toc li {
+      break-inside: avoid;
+      margin: 6px 0;
     }
 
-    section:first-of-type { border-top: 0; }
+    .toc a {
+      color: #a9cde1;
+    }
+
+    .toc a:hover {
+      color: var(--primary);
+    }
+
+    section {
+      padding: 34px 0;
+
+      border-top: 1px solid rgba(255, 255, 255, 0.075);
+    }
+
+    section:first-of-type {
+      border-top: 0;
+    }
 
     h2 {
-      margin: 0 0 14px;
-      font-size: 21px;
+      margin: 0 0 15px;
+
+      color: var(--text);
+
+      font-size: 1.35rem;
       line-height: 1.4;
-      letter-spacing: -0.02em;
+
+      letter-spacing: -0.025em;
     }
 
     h3 {
-      margin: 22px 0 8px;
-      font-size: 16px;
+      margin: 24px 0 9px;
+
+      color: #dce8f6;
+
+      font-size: 1rem;
     }
 
-    p { margin: 0 0 12px; }
+    p {
+      margin: 0 0 13px;
+      color: #c0ccda;
+    }
 
-    ul, ol {
-      margin: 8px 0 14px;
+    ul,
+    ol {
+      margin: 8px 0 15px;
       padding-left: 22px;
+
+      color: #c0ccda;
     }
 
-    li { margin: 6px 0; }
+    li {
+      margin: 6px 0;
+    }
 
     .note {
-      margin-top: 14px;
-      padding: 14px 16px;
-      border-left: 3px solid var(--accent);
-      background: #faf9ff;
-      color: var(--muted);
-      font-size: 14px;
+      margin-top: 15px;
+      padding: 15px 17px;
+
+      border: 1px solid rgba(69, 200, 255, 0.13);
+      border-left: 3px solid var(--primary);
+      border-radius: 0 12px 12px 0;
+
+      background: rgba(69, 200, 255, 0.055);
+
+      color: var(--text-muted);
+
+      font-size: 0.9rem;
     }
 
     .service-list {
       display: grid;
       gap: 10px;
-      margin-top: 10px;
+
+      margin-top: 15px;
     }
 
     .service-item {
-      padding: 12px 14px;
-      border: 1px solid var(--border);
+      padding: 13px 15px;
+
+      border: 1px solid rgba(255, 255, 255, 0.085);
       border-radius: 12px;
-      color: var(--muted);
-      font-size: 14px;
+
+      color: #c4d2e0;
+
+      background: rgba(255, 255, 255, 0.025);
+
+      font-size: 0.9rem;
     }
 
     .contact {
-      margin-top: 14px;
-      padding: 18px 20px;
-      border: 1px solid var(--border);
-      border-radius: 14px;
+      margin-top: 15px;
+      padding: 21px 22px;
+
+      border: 1px solid rgba(69, 200, 255, 0.17);
+      border-radius: 16px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(30, 101, 156, 0.16),
+          rgba(16, 43, 75, 0.42)
+        );
+
+      color: var(--text-muted);
     }
+
+    .contact strong {
+      color: var(--text);
+    }
+
+    /* Footer */
 
     footer {
-      margin-top: 28px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-      color: var(--subtle);
-      font-size: 13px;
+      margin-top: 34px;
+      padding-top: 27px;
+
+      border-top: 1px solid rgba(255, 255, 255, 0.075);
+
+      color: var(--text-subtle);
+
+      font-size: 0.83rem;
     }
 
-    @media (max-width: 600px) {
-      .wrap {
-        width: min(calc(100% - 28px), var(--max));
-        padding: 36px 0 52px;
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--text-subtle);
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 700px) {
+      .header-inner {
+        width: min(calc(100% - 28px), 1120px);
+        min-height: 66px;
       }
 
-      h1 { font-size: 32px; }
-      .lead { font-size: 15px; }
-      section { padding: 24px 0; }
-      h2 { font-size: 19px; }
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 11px;
+      }
+
+      .brand span:last-child {
+        font-size: 0.96rem;
+      }
+
+      .home-link {
+        min-height: 38px;
+        padding: 0 12px;
+        font-size: 0.83rem;
+      }
+
+      .wrap {
+        width: min(calc(100% - 28px), var(--max-width));
+        padding: 48px 0 58px;
+      }
+
+      h1 {
+        font-size: clamp(2.25rem, 11vw, 3.3rem);
+      }
+
+      .lead {
+        font-size: 0.96rem;
+      }
+
+      .toc {
+        padding: 20px;
+      }
+
+      .toc ul {
+        columns: 1;
+      }
+
+      section {
+        padding: 27px 0;
+      }
+
+      h2 {
+        font-size: 1.18rem;
+      }
+
+      .footer-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
     }
   </style>
 </head>
+
 <body>
+  <div class="page-glow glow-left"></div>
+  <div class="page-glow glow-right"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a
+        class="brand"
+        href="/"
+        aria-label="Lail Studio 홈"
+      >
+        <span class="brand-mark">
+          <img
+            src="/gugu-rush/logo.png"
+            alt=""
+          >
+        </span>
+
+        <span>Lail Studio</span>
+      </a>
+
+      <a
+        class="home-link"
+        href="/"
+      >
+        <span aria-hidden="true">←</span>
+        홈으로
+      </a>
+    </div>
+  </header>
+
   <main class="wrap">
-    <div class="brand">Lail Studio</div>
+    <div class="eyebrow">
+      <span class="eyebrow-dot"></span>
+      Privacy Policy
+    </div>
+
     <h1>개인정보처리방침</h1>
 
     <p class="lead">
-      Lail Studio는 이용자의 개인정보를 중요하게 생각하며, 관련 법령과 각 서비스의 실제 기능에 따라 필요한 범위에서만 개인정보를 처리합니다.
+      Lail Studio는 이용자의 개인정보를 중요하게 생각하며,
+      관련 법령과 각 서비스의 실제 기능에 따라 필요한 범위에서만 개인정보를 처리합니다.
     </p>
 
     <div class="meta">
-      시행일: 2026년 9월 5일<br />
-      본 방침은 Lail Studio가 제공하는 앱, 웹사이트 및 기타 디지털 서비스에 공통으로 적용됩니다.
-      개별 서비스의 기능이나 권한 사용 방식이 다른 경우에는 해당 서비스 내 별도 안내 또는 추가 고지가 함께 적용될 수 있습니다.
+      <strong>시행일: 2026년 9월 5일</strong><br>
+      본 방침은 Lail Studio가 제공하는 앱, 게임, 웹사이트 및 기타 디지털 서비스 중
+      별도의 개인정보처리방침이 제공되지 않는 서비스에 공통으로 적용됩니다.
+      별도의 개인정보처리방침이 제공되는 서비스에는 해당 서비스의 개별 개인정보처리방침이 우선 적용됩니다.
     </div>
 
     <nav class="toc" aria-label="목차">
       <strong>목차</strong>
+
       <ul>
         <li><a href="#scope">1. 적용 범위</a></li>
         <li><a href="#principles">2. 개인정보 처리 원칙</a></li>
@@ -210,17 +665,26 @@
 
     <section id="scope">
       <h2>1. 적용 범위</h2>
+
       <p>
-        본 개인정보처리방침은 Lail Studio가 운영하거나 제공하는 앱, 웹사이트 및 관련 디지털 서비스에 공통으로 적용됩니다.
+        본 개인정보처리방침은 Lail Studio가 운영하거나 제공하는 앱, 게임,
+        웹사이트 및 관련 디지털 서비스 중 별도의 개인정보처리방침이 제공되지 않는 서비스에 공통으로 적용됩니다.
       </p>
+
       <p>
-        서비스마다 기능과 이용 방식이 다르므로 실제로 처리되는 정보의 종류, 앱 권한, 광고 또는 분석 도구의 사용 여부는 서비스별로 다를 수 있습니다.
-        개별 서비스에서 별도의 개인정보 안내가 제공되는 경우 해당 안내가 함께 적용됩니다.
+        서비스마다 기능과 이용 방식이 다르므로 실제로 처리되는 정보의 종류,
+        앱 권한, 광고 또는 분석 도구의 사용 여부는 서비스별로 다를 수 있습니다.
+      </p>
+
+      <p>
+        개별 서비스에 별도의 개인정보처리방침이 제공되는 경우에는
+        해당 서비스의 개별 개인정보처리방침이 우선 적용됩니다.
       </p>
     </section>
 
     <section id="principles">
       <h2>2. 개인정보 처리 원칙</h2>
+
       <ul>
         <li>서비스 제공에 필요한 범위에서만 정보를 처리합니다.</li>
         <li>사용하지 않는 정보나 권한을 불필요하게 수집하지 않습니다.</li>
@@ -232,12 +696,14 @@
 
     <section id="collection">
       <h2>3. 처리할 수 있는 정보</h2>
+
       <p>
         Lail Studio의 서비스는 기능에 따라 아래 정보의 전부 또는 일부를 처리할 수 있습니다.
         모든 서비스가 아래 정보를 모두 수집하는 것은 아닙니다.
       </p>
 
       <h3>3-1. 자동으로 생성되거나 수집될 수 있는 정보</h3>
+
       <ul>
         <li>기기 종류, 운영체제, 앱 버전, 브라우저 정보</li>
         <li>IP 주소, 접속 시간, 방문 또는 사용 기록</li>
@@ -247,6 +713,7 @@
       </ul>
 
       <h3>3-2. 이용자가 직접 제공할 수 있는 정보</h3>
+
       <ul>
         <li>문의 과정에서 제공하는 이메일 주소</li>
         <li>문의 또는 지원 요청 내용</li>
@@ -254,27 +721,33 @@
       </ul>
 
       <p>
-        일부 서비스는 회원가입 기능이 없으며, 이름, 주소, 전화번호 등 직접 식별 정보를 요구하지 않을 수 있습니다.
+        일부 서비스는 회원가입 기능이 없으며,
+        이름, 주소, 전화번호 등 직접 식별 정보를 요구하지 않을 수 있습니다.
       </p>
     </section>
 
     <section id="permissions">
       <h2>4. 앱 권한 사용</h2>
+
       <p>
         일부 앱은 특정 기능을 제공하기 위해 운영체제 권한을 요청할 수 있습니다.
         요청되는 권한은 앱마다 다르며, 해당 기능에 필요한 경우에만 사용됩니다.
       </p>
+
       <p>
-        예를 들어 알림, 전화 관련 기능, 저장공간, 마이크 등 시스템 권한이 필요한 서비스가 있을 수 있습니다.
-        실제 사용 권한과 목적은 해당 앱의 권한 요청 화면 또는 별도 안내에서 확인할 수 있습니다.
+        실제로 사용하는 권한과 이용 목적은 해당 앱의 기능,
+        권한 요청 화면 또는 별도 안내를 통해 확인할 수 있습니다.
       </p>
+
       <div class="note">
-        권한 허용 여부는 이용자가 기기 설정에서 변경할 수 있으며, 특정 권한을 허용하지 않을 경우 관련 기능의 사용이 제한될 수 있습니다.
+        권한 허용 여부는 이용자가 기기 설정에서 변경할 수 있으며,
+        특정 권한을 허용하지 않을 경우 관련 기능의 사용이 제한될 수 있습니다.
       </div>
     </section>
 
     <section id="purpose">
       <h2>5. 개인정보의 이용 목적</h2>
+
       <ul>
         <li>서비스 및 핵심 기능 제공</li>
         <li>사용자 설정 및 서비스 상태 유지</li>
@@ -288,9 +761,12 @@
 
     <section id="cookies">
       <h2>6. 쿠키 및 자동 수집 기술</h2>
+
       <p>
-        Lail Studio의 웹 서비스는 서비스 운영, 이용 통계, 광고 제공 등을 위해 쿠키 및 유사 기술을 사용할 수 있습니다.
+        Lail Studio의 웹 서비스는 서비스 운영, 이용 통계,
+        광고 제공 등을 위해 쿠키 및 유사 기술을 사용할 수 있습니다.
       </p>
+
       <p>
         이용자는 브라우저 설정을 통해 쿠키를 삭제하거나 저장을 제한할 수 있습니다.
         다만 쿠키를 제한하면 일부 웹 기능 또는 광고 관련 기능이 정상적으로 작동하지 않을 수 있습니다.
@@ -299,32 +775,46 @@
 
     <section id="ads">
       <h2>7. 광고 서비스</h2>
+
       <p>
         Lail Studio의 일부 서비스는 서비스 운영을 위해 제3자 광고 서비스를 사용할 수 있습니다.
-        대표적으로 웹 서비스에서는 Google AdSense, 모바일 앱에서는 Google AdMob을 사용할 수 있습니다.
+        대표적으로 웹 서비스에서는 Google AdSense,
+        모바일 앱에서는 Google AdMob을 사용할 수 있습니다.
       </p>
 
       <h3>7-1. Google AdSense</h3>
+
       <p>
         일부 웹사이트는 Google AdSense를 통해 광고를 제공할 수 있습니다.
-        Google 및 광고 파트너는 광고 제공, 빈도 조절, 부정 광고 방지, 성과 측정 등을 위해 쿠키 또는 유사 기술을 사용할 수 있습니다.
+        Google 및 광고 파트너는 광고 제공, 빈도 조절,
+        부정 광고 방지, 성과 측정 등을 위해 쿠키 또는 유사 기술을 사용할 수 있습니다.
       </p>
 
       <h3>7-2. Google AdMob</h3>
+
       <p>
         일부 모바일 앱은 Google AdMob을 통해 광고를 제공할 수 있습니다.
-        이 과정에서 광고 식별자, 기기 정보, 앱 이용 정보 등이 Google 또는 광고 파트너에 의해 처리될 수 있습니다.
+        이 과정에서 광고 식별자, 기기 정보, 앱 이용 정보 등이
+        Google 또는 광고 파트너에 의해 처리될 수 있습니다.
       </p>
 
       <h3>7-3. 맞춤형 및 비맞춤형 광고</h3>
+
       <p>
-        이용자의 지역, 연령, 플랫폼 정책 및 동의 여부에 따라 맞춤형 광고 또는 비맞춤형 광고가 제공될 수 있습니다.
+        이용자의 지역, 연령, 플랫폼 정책 및 동의 여부에 따라
+        맞춤형 광고 또는 비맞춤형 광고가 제공될 수 있습니다.
         필요한 지역에서는 광고 관련 동의 또는 선택 화면이 제공될 수 있습니다.
       </p>
 
       <p>
         Google의 개인정보 처리 방식은
-        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google 개인정보처리방침</a>
+        <a
+          href="https://policies.google.com/privacy"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Google 개인정보처리방침
+        </a>
         에서 확인할 수 있습니다.
       </p>
 
@@ -335,59 +825,94 @@
 
     <section id="analytics">
       <h2>8. 분석 및 오류 진단 서비스</h2>
+
       <p>
-        일부 서비스는 안정성 개선, 오류 분석 또는 이용 통계 확인을 위해 외부 분석 또는 오류 진단 도구를 사용할 수 있습니다.
-        예를 들어 웹 서비스에서는 Google Analytics 4(GA4), 모바일 앱에서는 Google Analytics for Firebase, Firebase Crashlytics 등과 같은 서비스를 사용할 수 있습니다.
+        일부 서비스는 안정성 개선, 오류 분석 또는 이용 통계 확인을 위해
+        외부 분석 또는 오류 진단 도구를 사용할 수 있습니다.
+        예를 들어 웹 서비스에서는 Google Analytics 4(GA4),
+        모바일 앱에서는 Google Analytics for Firebase,
+        Firebase Crashlytics 등과 같은 서비스를 사용할 수 있습니다.
       </p>
+
       <p>
-        이러한 도구를 실제로 사용하는 경우 관련 서비스 제공업체가 기기 정보, 앱 사용 정보, 오류 정보 등을 처리할 수 있습니다.
+        이러한 도구를 실제로 사용하는 경우 관련 서비스 제공업체가
+        기기 정보, 앱 사용 정보, 오류 정보 등을 처리할 수 있습니다.
         사용하지 않는 서비스에는 해당 처리가 적용되지 않습니다.
       </p>
     </section>
 
     <section id="third-party">
       <h2>9. 제3자 제공 및 외부 서비스</h2>
+
       <p>
-        Lail Studio는 법령에 근거가 있거나 이용자의 동의가 있는 경우를 제외하고 개인정보를 임의로 판매하거나 제3자에게 제공하지 않습니다.
+        Lail Studio는 법령에 근거가 있거나 이용자의 동의가 있는 경우를 제외하고
+        개인정보를 임의로 판매하거나 제3자에게 제공하지 않습니다.
       </p>
+
       <p>
-        다만 서비스 운영을 위해 광고, 분석, 오류 진단, 호스팅, 앱 배포 등 외부 서비스 제공업체를 이용할 수 있습니다.
+        다만 서비스 운영을 위해 광고, 분석, 오류 진단,
+        호스팅, 앱 배포 등 외부 서비스 제공업체를 이용할 수 있습니다.
         이 경우 해당 업체의 개인정보처리방침과 관련 법령이 함께 적용될 수 있습니다.
       </p>
 
       <div class="service-list">
-        <div class="service-item">Google Play 및 Google Play 서비스</div>
-        <div class="service-item">Google AdMob</div>
-        <div class="service-item">Google AdSense</div>
-        <div class="service-item">Firebase 또는 Google Analytics 계열 서비스(사용하는 서비스에 한함)</div>
-        <div class="service-item">GitHub Pages, Cloudflare Pages 등 웹 호스팅 서비스(해당 웹사이트에 한함)</div>
+        <div class="service-item">
+          Google Play 및 Google Play 서비스
+        </div>
+
+        <div class="service-item">
+          Google AdMob
+        </div>
+
+        <div class="service-item">
+          Google AdSense
+        </div>
+
+        <div class="service-item">
+          Firebase 또는 Google Analytics 계열 서비스
+          (사용하는 서비스에 한함)
+        </div>
+
+        <div class="service-item">
+          GitHub Pages, Cloudflare Pages 등 웹 호스팅 서비스
+          (해당 웹사이트에 한함)
+        </div>
       </div>
     </section>
 
     <section id="retention">
       <h2>10. 개인정보의 보유 및 파기</h2>
+
       <p>
         개인정보는 처리 목적이 달성되면 지체 없이 파기하는 것을 원칙으로 합니다.
-        다만 관계 법령 또는 서비스 운영상 정당한 사유로 일정 기간 보관이 필요한 경우에는 해당 기간 동안 보관할 수 있습니다.
+        다만 관계 법령 또는 서비스 운영상 정당한 사유로 일정 기간 보관이 필요한 경우에는
+        해당 기간 동안 보관할 수 있습니다.
       </p>
+
       <p>
-        외부 광고, 분석 또는 오류 진단 서비스가 처리하는 정보의 보관 기간은 해당 서비스 제공업체의 정책에 따라 달라질 수 있습니다.
+        외부 광고, 분석 또는 오류 진단 서비스가 처리하는 정보의 보관 기간은
+        해당 서비스 제공업체의 정책에 따라 달라질 수 있습니다.
       </p>
     </section>
 
     <section id="rights">
       <h2>11. 이용자의 권리</h2>
+
       <p>
-        이용자는 관련 법령이 정하는 범위에서 개인정보의 열람, 정정, 삭제, 처리정지 등을 요청할 수 있습니다.
+        이용자는 관련 법령이 정하는 범위에서 개인정보의 열람,
+        정정, 삭제, 처리정지 등을 요청할 수 있습니다.
         관련 문의는 아래 연락처를 통해 접수할 수 있습니다.
       </p>
+
       <p>
-        쿠키, 광고 맞춤설정, 앱 권한 등은 이용자의 브라우저, 기기 또는 Google 계정 설정에서 직접 변경할 수 있는 경우가 있습니다.
+        쿠키, 광고 맞춤설정, 앱 권한 등은 이용자의 브라우저,
+        기기 또는 Google 계정 설정에서 직접 변경할 수 있는 경우가 있습니다.
       </p>
     </section>
 
     <section id="children">
       <h2>12. 아동의 개인정보</h2>
+
       <p>
         Lail Studio는 서비스 특성상 필요하지 않은 아동의 개인정보를 의도적으로 수집하지 않으며,
         아동을 대상으로 하는 서비스가 있는 경우 관련 법령 및 플랫폼 정책에 따른 보호조치를 적용합니다.
@@ -396,40 +921,72 @@
 
     <section id="security">
       <h2>13. 개인정보의 안전성 확보조치</h2>
+
       <p>
-        Lail Studio는 개인정보의 분실, 유출, 변조 또는 훼손을 방지하기 위해 처리 정보의 성격과 서비스 규모에 맞는 기술적·관리적 보호조치를 적용하도록 노력합니다.
+        Lail Studio는 개인정보의 분실, 유출, 변조 또는 훼손을 방지하기 위해
+        처리 정보의 성격과 서비스 규모에 맞는 기술적·관리적 보호조치를 적용하도록 노력합니다.
       </p>
     </section>
 
     <section id="international">
       <h2>14. 국외 처리 가능성</h2>
+
       <p>
-        Google, Firebase, GitHub 등 글로벌 서비스 제공업체를 이용하는 과정에서 일부 정보가 대한민국 외 지역의 서버에서 처리되거나 저장될 수 있습니다.
+        Google, Firebase, GitHub 등 글로벌 서비스 제공업체를 이용하는 과정에서
+        일부 정보가 대한민국 외 지역의 서버에서 처리되거나 저장될 수 있습니다.
         구체적인 처리 위치와 방식은 해당 서비스 제공업체의 정책 및 인프라 운영 방식에 따라 달라질 수 있습니다.
       </p>
     </section>
 
     <section id="changes">
       <h2>15. 개인정보처리방침의 변경</h2>
+
       <p>
-        서비스 기능, 외부 서비스 사용 여부 또는 관련 법령의 변경에 따라 본 방침이 수정될 수 있습니다.
+        서비스 기능, 외부 서비스 사용 여부 또는 관련 법령의 변경에 따라
+        본 방침이 수정될 수 있습니다.
         중요한 변경사항이 있는 경우 Lail Studio 웹사이트 또는 해당 서비스 내에서 안내할 수 있습니다.
       </p>
     </section>
 
     <section id="contact">
       <h2>16. 문의처</h2>
+
       <div class="contact">
-        <strong>Lail Studio</strong><br />
+        <strong>Lail Studio</strong><br>
+
         이메일:
-        <a href="mailto:lailstudio.app@gmail.com">lailstudio.app@gmail.com</a><br />
+        <a href="mailto:lailstudio.app@gmail.com">
+          lailstudio.app@gmail.com
+        </a>
+        <br>
+
         웹사이트:
-        <a href="https://lailstudio.github.io" target="_blank" rel="noopener noreferrer">https://lailstudio.github.io</a>
+        <a
+          href="https://lailstudio.lailmoa.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          https://lailstudio.lailmoa.com/
+        </a>
       </div>
     </section>
 
     <footer>
-      © 2026 Lail Studio. All rights reserved.
+      <div class="footer-row">
+        <span>
+          © 2026 Lail Studio. All rights reserved.
+        </span>
+
+        <div class="footer-links">
+          <a href="/">
+            Home
+          </a>
+
+          <a href="mailto:lailstudio.app@gmail.com">
+            Contact
+          </a>
+        </div>
+      </div>
     </footer>
   </main>
 </body>
