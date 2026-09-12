@@ -1,173 +1,886 @@
-
 <!doctype html>
 <html lang="ko">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Lail Studio | Apps & Games</title>
-  <meta name="description" content="Lail Studio는 일상에 재미와 도움이 되는 앱과 게임을 만드는 인디 스튜디오입니다.">
+
+  <meta
+    name="description"
+    content="Lail Studio는 일상에 재미와 도움이 되는 앱과 게임을 만드는 인디 스튜디오입니다."
+  >
+
   <meta property="og:title" content="Lail Studio">
-  <meta property="og:description" content="작은 아이디어가 더 즐거운 일상을 만듭니다.">
+  <meta
+    property="og:description"
+    content="작은 아이디어가 더 즐거운 일상을 만듭니다."
+  >
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://lailstudio.lailmoa.com/">
+
   <link rel="canonical" href="https://lailstudio.lailmoa.com/">
 
   <style>
     :root {
-      --bg:#f7faff; --surface:#fff; --navy:#12275a; --blue:#2f8cff;
-      --text:#15264a; --muted:#71809b; --line:#e4ebf5;
-      --shadow:0 12px 35px rgba(30,63,113,.08),0 2px 8px rgba(30,63,113,.04);
-      --radius:24px; --max:1180px;
+      --bg: #f7faff;
+      --surface: #ffffff;
+      --navy: #12275a;
+      --blue: #2f8cff;
+      --text: #15264a;
+      --muted: #71809b;
+      --line: #e4ebf5;
+
+      --shadow:
+        0 12px 35px rgba(30, 63, 113, 0.08),
+        0 2px 8px rgba(30, 63, 113, 0.04);
+
+      --radius: 24px;
+      --max: 1180px;
     }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-    img{display:block;max-width:100%}
-    a{color:inherit;text-decoration:none}
 
-    .header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.93);backdrop-filter:blur(14px);border-bottom:1px solid rgba(220,231,246,.8)}
-    .header-inner{width:min(calc(100% - 40px),var(--max));height:72px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:30px}
-    .brand{font-size:24px;font-weight:900;letter-spacing:-.04em;color:var(--navy)}
-    .nav{display:flex;gap:32px;font-size:14px;font-weight:700;color:#32466d}
-    .nav a:hover{color:var(--blue)}
-    .tagline{font-size:13px;font-weight:600;color:#8290a8}
-
-    .hero{width:100%;overflow:hidden;background:#cdeaff}
-    .hero img{width:100%;height:auto;object-fit:cover}
-
-    .works{width:min(calc(100% - 40px),var(--max));margin:auto;padding:64px 0 90px}
-    .eyebrow{margin:0 0 5px;font-size:13px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--blue)}
-    .title{margin:0;font-size:clamp(32px,4vw,48px);line-height:1.15;letter-spacing:-.045em;color:var(--navy)}
-    .desc{margin:10px 0 30px;color:var(--muted);font-size:16px}
-
-    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
-    .card{overflow:hidden;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);transition:.2s ease}
-    .card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(30,63,113,.12)}
-    .feature{aspect-ratio:1024/500;background:#edf3fb;overflow:hidden}
-    .feature img{width:100%;height:100%;object-fit:cover}
-    .info{padding:18px 21px 21px}
-    .info h2{margin:0 0 4px;font-size:20px;letter-spacing:-.025em;color:var(--navy)}
-    .info p{margin:0;color:var(--muted);font-size:14px}
-
-    .about{margin-top:80px;padding:48px;background:linear-gradient(135deg,#eef7ff,#f9fcff);border:1px solid #deebf8;border-radius:30px;display:grid;grid-template-columns:1.2fr .8fr;gap:55px}
-    .about h2{margin:0 0 14px;font-size:34px;line-height:1.3;letter-spacing:-.04em;color:var(--navy)}
-    .about p{margin:0;color:#40577e;line-height:1.85}
-    .meta{display:grid;align-content:center;gap:14px;font-size:14px}
-    .meta-row{display:grid;grid-template-columns:80px 1fr;gap:15px}
-    .meta-label{font-weight:700;color:#8290a8}
-    .meta-value{font-weight:600;color:#273c66}
-
-    footer{background:#fff;border-top:1px solid var(--line)}
-    .footer-inner{width:min(calc(100% - 40px),var(--max));margin:auto;padding:32px 0 38px;display:flex;justify-content:space-between;gap:35px}
-    .footer-brand{font-size:19px;font-weight:900;color:var(--navy)}
-    .footer-note{margin-top:4px;font-size:13px;color:var(--muted)}
-    .footer-links{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:10px 24px;margin-bottom:9px;font-size:13px;font-weight:700;color:#516380}
-    .copyright{text-align:right;font-size:12px;line-height:1.8;color:#8b98ad}
-
-    @media(max-width:800px){
-      .nav{display:none}.header-inner{height:64px}.grid{grid-template-columns:1fr}
-      .works{padding-top:46px}.about{grid-template-columns:1fr;padding:32px;gap:30px}
-      .footer-inner{flex-direction:column}.footer-links{justify-content:flex-start}.copyright{text-align:left}
+    * {
+      box-sizing: border-box;
     }
-    @media(max-width:520px){
-      .header-inner,.works,.footer-inner{width:calc(100% - 28px)}
-      .tagline{display:none}.brand{font-size:21px}
-      .works{padding:40px 0 65px}.grid{gap:18px}.card{border-radius:19px}
-      .info{padding:15px 17px 18px}.info h2{font-size:18px}.info p{font-size:13px}
-      .about{margin-top:55px;padding:27px 23px;border-radius:23px}.about h2{font-size:27px}
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+
+      font-family:
+        Pretendard,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      background: rgba(255, 255, 255, 0.93);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+
+      border-bottom: 1px solid rgba(220, 231, 246, 0.8);
+    }
+
+    .header-inner {
+      width: min(calc(100% - 40px), var(--max));
+      height: 72px;
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--navy);
+    }
+
+    .nav {
+      display: flex;
+      gap: 32px;
+
+      font-size: 14px;
+      font-weight: 700;
+      color: #32466d;
+    }
+
+    .nav a:hover {
+      color: var(--blue);
+    }
+
+    .tagline {
+      font-size: 13px;
+      font-weight: 600;
+      color: #8290a8;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      width: 100%;
+      overflow: hidden;
+      background: #cdeaff;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+
+    /* =========================
+       WORKS
+    ========================= */
+
+    .works {
+      width: min(calc(100% - 40px), var(--max));
+      margin: auto;
+      padding: 64px 0 90px;
+    }
+
+    .eyebrow {
+      margin: 0 0 5px;
+
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+
+      color: var(--blue);
+    }
+
+    .title {
+      margin: 0;
+
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.15;
+      letter-spacing: -0.045em;
+
+      color: var(--navy);
+    }
+
+    .desc {
+      margin: 10px 0 30px;
+
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+
+    /* =========================
+       PROJECT GRID
+    ========================= */
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      overflow: hidden;
+
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+
+      box-shadow: var(--shadow);
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+
+      box-shadow:
+        0 20px 50px rgba(30, 63, 113, 0.12),
+        0 4px 12px rgba(30, 63, 113, 0.05);
+    }
+
+    .feature {
+      aspect-ratio: 1024 / 500;
+      background: #edf3fb;
+      overflow: hidden;
+    }
+
+    .feature img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .info {
+      padding: 18px 21px 21px;
+    }
+
+    .info h2 {
+      margin: 0 0 4px;
+
+      font-size: 20px;
+      letter-spacing: -0.025em;
+
+      color: var(--navy);
+    }
+
+    .info p {
+      margin: 0;
+
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about {
+      margin-top: 80px;
+      padding: 48px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #eef7ff,
+          #f9fcff
+        );
+
+      border: 1px solid #deebf8;
+      border-radius: 30px;
+
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 55px;
+    }
+
+    .about h2 {
+      margin: 0 0 14px;
+
+      font-size: 34px;
+      line-height: 1.3;
+      letter-spacing: -0.04em;
+
+      color: var(--navy);
+    }
+
+    .about p {
+      margin: 0;
+
+      color: #40577e;
+      line-height: 1.85;
+    }
+
+    .meta {
+      display: grid;
+      align-content: center;
+      gap: 14px;
+
+      font-size: 14px;
+    }
+
+    .meta-row {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 15px;
+    }
+
+    .meta-label {
+      font-weight: 700;
+      color: #8290a8;
+    }
+
+    .meta-value {
+      font-weight: 600;
+      color: #273c66;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #ffffff;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      width: min(calc(100% - 40px), var(--max));
+      margin: auto;
+      padding: 32px 0 38px;
+
+      display: flex;
+      justify-content: space-between;
+      gap: 35px;
+    }
+
+    .footer-brand {
+      font-size: 19px;
+      font-weight: 900;
+      color: var(--navy);
+    }
+
+    .footer-note {
+      margin-top: 4px;
+
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+
+      margin-bottom: 9px;
+
+      font-size: 13px;
+      font-weight: 700;
+      color: #516380;
+    }
+
+    .footer-links a:hover {
+      color: var(--blue);
+    }
+
+    .copyright {
+      text-align: right;
+
+      font-size: 12px;
+      line-height: 1.8;
+      color: #8b98ad;
+    }
+
+
+    /* =========================
+       TABLET
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      .nav {
+        display: none;
+      }
+
+      .header-inner {
+        height: 64px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .works {
+        padding-top: 46px;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+        padding: 32px;
+        gap: 30px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+
+      .footer-links {
+        justify-content: flex-start;
+      }
+
+      .copyright {
+        text-align: left;
+      }
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 520px) {
+
+      .header-inner,
+      .works,
+      .footer-inner {
+        width: calc(100% - 28px);
+      }
+
+      .tagline {
+        display: none;
+      }
+
+      .brand {
+        font-size: 21px;
+      }
+
+      .works {
+        padding: 40px 0 65px;
+      }
+
+      .grid {
+        gap: 18px;
+      }
+
+      .card {
+        border-radius: 19px;
+      }
+
+      .info {
+        padding: 15px 17px 18px;
+      }
+
+      .info h2 {
+        font-size: 18px;
+      }
+
+      .info p {
+        font-size: 13px;
+      }
+
+      .about {
+        margin-top: 55px;
+        padding: 27px 23px;
+        border-radius: 23px;
+      }
+
+      .about h2 {
+        font-size: 27px;
+      }
     }
   </style>
 </head>
+
+
 <body>
-<header class="header">
-  <div class="header-inner">
-    <a class="brand" href="/">Lail Studio</a>
-    <nav class="nav">
-      <a href="/">홈</a><a href="#works">우리의 작품</a><a href="#about">스튜디오 소개</a>
-      <a href="mailto:lailstudio.app@gmail.com">문의</a>
-    </nav>
-    <div class="tagline">Play. Learn. Everyday.</div>
-  </div>
-</header>
 
-<main>
-  <section class="hero">
-    <img src="/assets/hero-lail-studio.png" alt="Lail Studio - 작은 아이디어가 더 즐거운 일상을 만듭니다.">
-  </section>
+  <!-- HEADER -->
 
-  <section class="works" id="works">
-    <p class="eyebrow">Lail Studio Works</p>
-    <h1 class="title">Our Apps &amp; Games</h1>
-    <p class="desc">일상에 재미와 도움이 되는 Lail Studio의 앱과 게임을 만나보세요.</p>
+  <header class="header">
+    <div class="header-inner">
 
-    <div class="grid">
-      <article class="card">
-        <div class="feature"><img src="/assets/gugurush.png" alt="구구단 게임 - 구구러시" loading="lazy"></div>
-        <div class="info"><h2>구구단 게임 - 구구러시</h2><p>빠르고 재미있게 즐기는 구구단 학습 게임.</p></div>
-      </article>
+      <a class="brand" href="/">
+        Lail Studio
+      </a>
 
-      <article class="card">
-        <div class="feature"><img src="/assets/a1.png" alt="초등 영단어 학습" loading="lazy"></div>
-        <div class="info"><h2>초등 영단어 학습</h2><p>초등학생을 위한 쉽고 재미있는 매일 영단어 학습.</p></div>
-      </article>
+      <nav class="nav">
+        <a href="/">홈</a>
+        <a href="#works">우리의 작품</a>
+        <a href="#about">스튜디오 소개</a>
+        <a href="mailto:lailstudio.app@gmail.com">문의</a>
+      </nav>
 
-      <article class="card">
-        <div class="feature"><img src="/assets/b2.png" alt="중등 영단어 학습" loading="lazy"></div>
-        <div class="info"><h2>중등 영단어 학습</h2><p>중학교 필수 영단어를 매일 꾸준히 학습해요.</p></div>
-      </article>
+      <div class="tagline">
+        Play. Learn. Everyday.
+      </div>
 
-      <article class="card">
-        <div class="feature"><img src="/assets/c1.png" alt="고등 영단어 학습" loading="lazy"></div>
-        <div class="info"><h2>고등 영단어 학습</h2><p>고등학교 영어 학습을 위한 매일 영단어.</p></div>
-      </article>
-
-      <article class="card">
-        <div class="feature"><img src="/assets/TimeCallFeatureGraphic.png" alt="예약전화 TimeCall" loading="lazy"></div>
-        <div class="info"><h2>예약전화 - TimeCall</h2><p>원하는 시간에 자동으로 전화를 걸어주는 예약전화 앱.</p></div>
-      </article>
-
-      <article class="card">
-        <div class="feature"><img src="/assets/timerush_feature_graphic_1024x500.png" alt="TimeRush" loading="lazy"></div>
-        <div class="info"><h2>TimeRush</h2><p>시간 감각이 자라는 신나는 시계 학습 게임.</p></div>
-      </article>
-
-      <article class="card">
-        <div class="feature"><img src="/assets/dopplerush.png" alt="도플러시" loading="lazy"></div>
-        <div class="info"><h2>도플러시</h2><p>학교에 숨어든 도플갱어를 찾아내는 추리 게임.</p></div>
-      </article>
-
-      <article class="card">
-        <div class="feature"><img src="/assets/ticketReady.png" alt="Ticket Ready" loading="lazy"></div>
-        <div class="info"><h2>Ticket Ready</h2><p>실전처럼 연습하며 티켓팅을 준비하는 연습 서비스.</p></div>
-      </article>
     </div>
+  </header>
 
-    <section class="about" id="about">
-      <div>
-        <p class="eyebrow">About Lail Studio</p>
-        <h2>작은 아이디어가<br>더 즐거운 일상을 만듭니다.</h2>
-        <p>Lail Studio는 교육, 게임, 생활 도구 등 일상에서 직접 사용할 수 있는 다양한 앱과 서비스를 만듭니다. 쉽고 즐겁게 사용할 수 있는 경험을 중요하게 생각합니다.</p>
-      </div>
-      <div class="meta">
-        <div class="meta-row"><div class="meta-label">Studio</div><div class="meta-value">Lail Studio</div></div>
-        <div class="meta-row"><div class="meta-label">Email</div><div class="meta-value"><a href="mailto:lailstudio.app@gmail.com">lailstudio.app@gmail.com</a></div></div>
-        <div class="meta-row"><div class="meta-label">Website</div><div class="meta-value">lailstudio.lailmoa.com</div></div>
-      </div>
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <img
+        src="/assets/hero-lail-studio.png"
+        alt="Lail Studio - 작은 아이디어가 더 즐거운 일상을 만듭니다."
+      >
+
     </section>
-  </section>
-</main>
 
-<footer>
-  <div class="footer-inner">
-    <div><div class="footer-brand">Lail Studio</div><div class="footer-note">작은 아이디어가 더 즐거운 일상을 만듭니다.</div></div>
-    <div>
-      <div class="footer-links">
-        <a href="/">홈</a><a href="#works">우리의 작품</a><a href="#about">스튜디오 소개</a>
-        <a href="mailto:lailstudio.app@gmail.com">문의</a><a href="/privacy">개인정보처리방침</a>
+
+    <!-- APPS & GAMES -->
+
+    <section class="works" id="works">
+
+      <p class="eyebrow">
+        Lail Studio Works
+      </p>
+
+      <h1 class="title">
+        Our Apps & Games
+      </h1>
+
+      <p class="desc">
+        일상에 재미와 도움이 되는 Lail Studio의 앱과 게임을 만나보세요.
+      </p>
+
+
+      <div class="grid">
+
+
+        <!-- 구구러시 -->
+
+        <article class="card">
+
+          <div class="feature">
+            <img
+              src="/assets/gugurush.png"
+              alt="구구단 게임 - 구구러시"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="info">
+
+            <h2>
+              구구단 게임 - 구구러시
+            </h2>
+
+            <p>
+              빠르고 재미있게 즐기는 구구단 학습 게임.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- 초등 영단어 -->
+
+        <article class="card">
+
+          <div class="feature">
+            <img
+              src="/assets/a1.png"
+              alt="초등 영단어 학습"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="info">
+
+            <h2>
+              초등 영단어 학습
+            </h2>
+
+            <p>
+              초등학생을 위한 쉽고 재미있는 매일 영단어 학습.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- 중등 영단어 -->
+
+        <article class="card">
+
+          <div class="feature">
+            <img
+              src="/assets/b2.png"
+              alt="중등 영단어 학습"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="info">
+
+            <h2>
+              중등 영단어 학습
+            </h2>
+
+            <p>
+              중학교 필수 영단어를 매일 꾸준히 학습해요.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- 고등 영단어 -->
+
+        <article class="card">
+
+          <div class="feature">
+            <img
+              src="/assets/c1.png"
+              alt="고등 영단어 학습"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="info">
+
+            <h2>
+              고등 영단어 학습
+            </h2>
+
+            <p>
+              고등학교 영어 학습을 위한 매일 영단어.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- TimeCall -->
+
+        <article class="card">
+
+          <div class="feature">
+            <img
+              src="/assets/TimeCallFeatureGraphic.png"
+              alt="예약전화 TimeCall"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="info">
+
+            <h2>
+              예약전화 - TimeCall
+            </h2>
+
+            <p>
+              원하는 시간에 자동으로 전화를 걸어주는 예약전화 앱.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- TimeRush -->
+
+        <article class="card">
+
+          <div class="feature">
+            <img
+              src="/assets/timerush_feature_graphic_1024x500.png"
+              alt="TimeRush"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="info">
+
+            <h2>
+              TimeRush
+            </h2>
+
+            <p>
+              시간 감각이 자라는 신나는 시계 학습 게임.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- 도플러시 -->
+
+        <article class="card">
+
+          <div class="feature">
+            <img
+              src="/assets/dopplerush.png"
+              alt="도플러시"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="info">
+
+            <h2>
+              도플러시
+            </h2>
+
+            <p>
+              학교에 숨어든 도플갱어를 찾아내는 추리 게임.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- Ticket Ready -->
+
+        <article class="card">
+
+          <div class="feature">
+            <img
+              src="/assets/ticketReady.png"
+              alt="Ticket Ready"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="info">
+
+            <h2>
+              Ticket Ready
+            </h2>
+
+            <p>
+              실전처럼 연습하며 티켓팅을 준비하는 연습 서비스.
+            </p>
+
+          </div>
+
+        </article>
+
+
       </div>
-      <div class="copyright">© 2026 Lail Studio. All rights reserved.<br>대한민국 · 대표 김다일 · 사업자등록번호 109-16-78543</div>
+
+
+      <!-- ABOUT -->
+
+      <section class="about" id="about">
+
+        <div>
+
+          <p class="eyebrow">
+            About Lail Studio
+          </p>
+
+          <h2>
+            작은 아이디어가<br>
+            더 즐거운 일상을 만듭니다.
+          </h2>
+
+          <p>
+            Lail Studio는 교육, 게임, 생활 도구 등
+            일상에서 직접 사용할 수 있는 다양한 앱과 서비스를 만듭니다.
+            쉽고 즐겁게 사용할 수 있는 경험을 중요하게 생각합니다.
+          </p>
+
+        </div>
+
+
+        <div class="meta">
+
+          <div class="meta-row">
+            <div class="meta-label">
+              Studio
+            </div>
+
+            <div class="meta-value">
+              Lail Studio
+            </div>
+          </div>
+
+
+          <div class="meta-row">
+            <div class="meta-label">
+              Email
+            </div>
+
+            <div class="meta-value">
+              <a href="mailto:lailstudio.app@gmail.com">
+                lailstudio.app@gmail.com
+              </a>
+            </div>
+          </div>
+
+
+          <div class="meta-row">
+            <div class="meta-label">
+              Website
+            </div>
+
+            <div class="meta-value">
+              lailstudio.lailmoa.com
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div>
+
+        <div class="footer-brand">
+          Lail Studio
+        </div>
+
+        <div class="footer-note">
+          작은 아이디어가 더 즐거운 일상을 만듭니다.
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <div class="footer-links">
+
+          <a href="/">
+            홈
+          </a>
+
+          <a href="#works">
+            우리의 작품
+          </a>
+
+          <a href="#about">
+            스튜디오 소개
+          </a>
+
+          <a href="mailto:lailstudio.app@gmail.com">
+            문의
+          </a>
+
+          <a href="/privacy">
+            개인정보처리방침
+          </a>
+
+        </div>
+
+
+        <div class="copyright">
+
+          © 2026 Lail Studio. All rights reserved.
+          <br>
+
+          대한민국 · 대표 김다일 · 사업자등록번호 109-16-78543
+
+        </div>
+
+      </div>
+
     </div>
-  </div>
-</footer>
+
+  </footer>
+
 </body>
 </html>
